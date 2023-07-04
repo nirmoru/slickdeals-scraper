@@ -52,12 +52,30 @@ resultRow = temp_func_name_class(source=searchResults, parser='html.parser', cla
 # mainDealInfo = temp_func_name_id(source=resultRow, parser='html.parser', id_name='mainDealInfo')
 
 soup = BeautifulSoup(resultRow, 'html.parser')
+lazyimg = soup.select('.lazyimg')
+# for x, y in enumerate(lazyimg): # to get thumb image of individual product on resultRow
+#     print(y['data-original'])
 dealTitle = soup.select('.dealTitle')
+# for x, y in enumerate(dealTitle):
+#     print(y['title'])
 dealInfo = soup.select('.dealInfo')
+for x, y in enumerate(dealInfo):
+    # print(y.text.strip())
+    print(y)
 username = soup.select('.username')
+# for x, y in enumerate(username):
+#     print(y.text.strip())
+priceCol = soup.select('.priceCol')
+# for x, y in enumerate(priceCol):
+#     print(y)
+ratingNum = soup.select('.ratingNum')
+# for x, y in enumerate(ratingNum):
+#     print(y.text)
 
-for i in username:
-    print(i.text)
+
+def temp_interface():
+    return 0
+
 
 # with open('test2.html', "w") as f:
 #     f.write(mainDealInfo).
